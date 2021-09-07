@@ -1,0 +1,57 @@
+﻿@model IEnumerable<LT_TCS_CRUD.Models.Contato>
+@using System.Web
+
+@{
+    ViewData["Title"] = "Lista de Contatos";
+}
+
+<h1>Lista de Contatos</h1>
+
+<p>
+    <button class="btn btn-primary" onclick="location.href='@Url.Action("Create", "Contatos")'"><i class="fas fa-plus"></i>&nbsp;Novo Contato</button>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nome
+            </th>
+            <th>
+                E-mail
+            </th>
+            <th>
+                Telefone
+            </th>
+            <th>
+                Endereço
+            </th>
+            <th>
+                Cidade
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cidade)
+            </td>
+        </tr>
+        }
+    </tbody>
+
+
+</table>
